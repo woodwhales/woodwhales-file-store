@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: woodwhales-file-store
+  servlet:
+    multipart:
+      enabled: true
+      location: /data/upload/temp
+      max-request-size: 500GB
+      max-file-size: 500GB
+      resolve-lazily: true
+dromara:
+  x-file-storage:
+    default-platform: minio
+    thumbnail-suffix: ".min.jpg"
+    minio:
+    - platform: minio
+      enable-storage: true  # 启用存储
+      access-key: imZXFwjxtBRpjzduR3CZ
+      secret-key: vKtKA4gXG8XJVlB0EeifkYqdHJh5csWnGHUJdNrB
+      end-point: http://192.168.100.133:9500/
+      bucket-name: public
+      domain: http://192.168.100.133:9500/public/
+      base-path: test-base-path/
